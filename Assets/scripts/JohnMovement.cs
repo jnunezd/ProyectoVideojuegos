@@ -17,7 +17,7 @@ public class JohnMovement : MonoBehaviour
 
     private float LastShoot;
 
-    private int Health = 5;
+    private int Health = 500;
 
     // Start is called before the first frame update
     void Start()
@@ -46,12 +46,13 @@ public class JohnMovement : MonoBehaviour
             Grounded = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && Grounded)
+        
+        if (Input.GetButtonDown("Jump") && Grounded)
         {
             Jump();
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > LastShoot + 0.25f)
+        if (Input.GetButtonDown("Fire") && Time.time > LastShoot + 0.25f)
         {
             Shoot();
             LastShoot = Time.time;
@@ -71,6 +72,7 @@ public class JohnMovement : MonoBehaviour
 
     private void Shoot()
     {
+        Animator.SetTrigger("John_Shoot");
         Vector3 direction;
 
         if (transform.localScale.x == 1) direction = Vector2.right;

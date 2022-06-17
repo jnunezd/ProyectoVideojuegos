@@ -7,7 +7,9 @@ public class GruntScript : MonoBehaviour
     public GameObject John;
     public GameObject BulletPrefab;
 
-    private int Health = 3;
+    public Animator animator;
+
+    private int Health = 2;
 
 
     private float LastShoot;
@@ -30,6 +32,7 @@ public class GruntScript : MonoBehaviour
     }
     private void Shoot()
     {
+        animator.SetTrigger("grunt_shoot");
         Vector3 direction;
 
         if (transform.localScale.x == 1) direction = Vector2.right;
@@ -42,7 +45,15 @@ public class GruntScript : MonoBehaviour
     public void Hit()
     {
         Health--;
-        if (Health == 0) Destroy(gameObject);
+        if (Health == 0){
+            Die();
+        };
         
+    }
+
+    void Die()
+    {
+        Debug.Log("Die");
+        Destroy(gameObject);
     }
 }
