@@ -53,7 +53,6 @@ public class GruntScript : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Die");
         Destroy(gameObject);
     }
 }
