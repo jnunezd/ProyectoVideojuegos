@@ -7,10 +7,14 @@ public class HUD : MonoBehaviour
 {
     public GameManager gameManager;
     public TextMeshProUGUI puntos;
+
+    public GameObject[] hearts;
+    public GameObject John;
     
     // Update is called once per frame
     void Update()
     {
         puntos.text = gameManager.PuntosTotales.ToString();
+
     }
 }

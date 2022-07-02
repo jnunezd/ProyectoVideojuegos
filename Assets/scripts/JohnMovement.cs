@@ -17,7 +17,9 @@ public class JohnMovement : MonoBehaviour
 
     private float LastShoot;
 
-    private int Health = 500;
+    public int Health = 500;
+
+    public GameObject[] hearts;
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +59,8 @@ public class JohnMovement : MonoBehaviour
             Shoot();
             LastShoot = Time.time;
         }
+
+        
         
     }
 
@@ -85,7 +89,17 @@ public class JohnMovement : MonoBehaviour
     public void Hit()
     {
         Health--;
-        if (Health == 0) Destroy(gameObject);
+        if (this.Health < 1)
+        {
+            Destroy(hearts[0].gameObject);
+            Destroy(gameObject);
+        } else if (this.Health < 2)
+        {
+            Destroy(hearts[1].gameObject);
+        } else if (this.Health < 3)
+        {
+            Destroy(hearts[2].gameObject);
+        }
         
     }
 
