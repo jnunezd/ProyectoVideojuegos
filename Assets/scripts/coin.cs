@@ -12,6 +12,7 @@ public class Coin : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             manager.SumarPuntos(valor);
+            // collision.GetComponent<GameManager>().SumarPuntos(valor);
             Destroy(this.gameObject);
         }
     }
