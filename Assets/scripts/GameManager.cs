@@ -13,5 +13,10 @@ public class GameManager : MonoBehaviour
         puntosTotales += puntosASumar;
         Debug.Log("Puntos totales: " + puntosTotales);
     }
+
+    public void Reset()
+    {
+        
+    }
    
 }
