@@ -8,24 +8,24 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - bg
+  - bgcolor
   - Water
   - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - bgFondo
+  - 
+  - 
+  - BgPlantas
+  - 
+  - 
+  - decor
+  - items
   - Enemy
   - Player
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
   - 
   - 
   - 

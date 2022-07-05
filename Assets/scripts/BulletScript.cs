@@ -39,12 +39,14 @@ public class BulletScript : MonoBehaviour
         if (John != null)
         {
             John.Hit();
+            DestroyBullet();
         }
         if (Grunt != null)
         {
             Grunt.Hit();
+            DestroyBullet();
         }
-        DestroyBullet();
+        
     }
 
 }
