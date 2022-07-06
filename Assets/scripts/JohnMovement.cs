@@ -14,6 +14,7 @@ public class JohnMovement : MonoBehaviour
     private float Horizontal;
     private bool Grounded;
     private float LastShoot;
+    private int originalHealth = 3;
     private int Health = 3;
 
     private bool controlsEnabled = true;
@@ -25,6 +26,8 @@ public class JohnMovement : MonoBehaviour
 
     public GameObject[] hearts;
     public GameManager manager;
+
+    public GameObject fallDetector;
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +72,7 @@ public class JohnMovement : MonoBehaviour
             LastShoot = Time.time;
         }
 
-        
+        fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
         
     }
 
@@ -104,14 +107,16 @@ public class JohnMovement : MonoBehaviour
         Health--;
         if (this.Health < 1)
         {
-            Destroy(hearts[0].gameObject);
+            hearts[0].gameObject.SetActive(false);
             this.Die();
         } else if (this.Health < 2)
         {
-            Destroy(hearts[1].gameObject);
+            hearts[1].gameObject.SetActive(false);
+
         } else if (this.Health < 3)
         {
-            Destroy(hearts[2].gameObject);
+            hearts[2].gameObject.SetActive(false);
+
         }
         
     }
@@ -129,23 +134,48 @@ public class JohnMovement : MonoBehaviour
         }
         Rigidbody2D.gravityScale = 0.5f;
         Rigidbody2D.AddForce(transform.up * shockForce, ForceMode2D.Impulse);
+        waiter(5.5f);
         this.PlayerRespawn();
     }
 
-    IEnumerator PlayerRespawn()
+    public void PlayerRespawn()
     {
-        yield return new WaitForSeconds(1.5f);
+        waiter(1.5f);
         isDead = false;
-        Animator.SetBool("Dead", isDead);
+        Animator.SetBool("dead", isDead);
         playerCollider.enabled = true;
         foreach (GameObject child in ChilfObjs)
         {
             child.SetActive(true);
         }
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            hearts[i].gameObject.SetActive(true);
+        }
+
+
         Rigidbody2D.gravityScale = 1.3f;
-        yield return new WaitForSeconds(0.1f);
+        waiter(0.1f);
         controlsEnabled = true;
-        manager.Reset();
+        Health = originalHealth;
+        GetComponent<PlayerRespawn>().respawn();
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("caida f");
+        if (collision.CompareTag("DetectorCaida"))
+        {
+            Debug.Log("caida");
+            this.Die();
+        }
+    }
+
+    IEnumerator waiter(float time)
+    {
+        yield return new WaitForSeconds(time);
     }
 
     

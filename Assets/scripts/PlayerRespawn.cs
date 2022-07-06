@@ -22,6 +22,11 @@ public class PlayerRespawn : MonoBehaviour
         
     }
 
+    public void respawn(){
+        transform.position=(new Vector2(PlayerPrefs.GetFloat("checkPointPositionX"), PlayerPrefs.GetFloat("checkPointPositionY")));
+
+    }
+
     public void ReachedCheckpoint(float x, float y)
     {
         PlayerPrefs.SetFloat("checkPointPositionX", x);
