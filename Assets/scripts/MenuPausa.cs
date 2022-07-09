@@ -34,6 +34,7 @@ public class MenuPausa : MonoBehaviour
 
     public void Reiniciar()
     {
+        PlayerPrefs.DeleteAll();
         Time.timeScale = 1;
         PauseButtonUi.SetActive(true);
         MenuPausaUi.SetActive(false);

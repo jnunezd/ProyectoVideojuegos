@@ -11,6 +11,7 @@ public class GruntScript : MonoBehaviour
 
     private int Health = 2;
 
+public AudioClip GruntHit;
 
     private float LastShoot;
  
@@ -44,6 +45,7 @@ public class GruntScript : MonoBehaviour
 
     public void Hit()
     {
+        AudioSource.PlayClipAtPoint(GruntHit, transform.position);
         Health--;
         if (Health == 0){
             Die();

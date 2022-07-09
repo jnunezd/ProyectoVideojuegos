@@ -160,3 +160,4 @@ MonoBehaviour:
   John: {fileID: 0}
   BulletPrefab: {fileID: 460974119680293305, guid: 26079c718561a9847ac023444e9b5286, type: 3}
   animator: {fileID: 8370703867533236927}
+  GruntHit: {fileID: 8300000, guid: ca4f83a47359e4f48b4c5bd70d6fd539, type: 3}

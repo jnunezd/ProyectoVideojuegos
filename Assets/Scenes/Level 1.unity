@@ -3107,7 +3107,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0426a9a97bdeed94bbcbf8bbac1d7878, type: 3}
@@ -32129,6 +32129,7 @@ MonoBehaviour:
   - {fileID: 2139186777}
   manager: {fileID: 859479059}
   fallDetector: {fileID: 8269960}
+  JohnHit: {fileID: 8300000, guid: 64082012351c839409ea474641e0a50c, type: 3}
 --- !u!95 &2141148619
 Animator:
   serializedVersion: 4

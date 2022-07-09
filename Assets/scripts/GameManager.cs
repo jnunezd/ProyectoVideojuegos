@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int PuntosTotales { get {return puntosTotales;} }
-    private int puntosTotales = 0;
+    public int MonedasTotales { get {return monedasTotales;} }
+    private int monedasTotales = 0;
+
+    public int nextLvl;
 
 
-    public void SumarPuntos(int puntosASumar)
+    public void SumarPuntos(int monedasASumar)
     {
-        puntosTotales += puntosASumar;
-        Debug.Log("Puntos totales: " + puntosTotales);
+        monedasTotales += monedasASumar;
+        Debug.Log("Puntos totales: " + monedasTotales);
+    }
+
+    private void goNextLvl(){
+        SceneManager.LoadScene(nextLvl);
     }
 
     public void Reset()

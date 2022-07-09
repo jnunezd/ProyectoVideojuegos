@@ -29,6 +29,8 @@ public class JohnMovement : MonoBehaviour
 
     public GameObject fallDetector;
 
+    public AudioClip JohnHit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -104,6 +106,7 @@ public class JohnMovement : MonoBehaviour
 
     public void Hit()
     {
+        AudioSource.PlayClipAtPoint(JohnHit, transform.position);
         Health--;
         if (this.Health < 1)
         {
