@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class checkpoint : MonoBehaviour
 {
+    public AudioClip onCheckpointSound;
+    private bool isCheckpoint = false;
    private void OnTriggerEnter2D(Collider2D collision)
    {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerRespawn>().ReachedCheckpoint(transform.position.x, transform.position.y);
-            GetComponent<Animator>().enabled = true;
+            if (!this.isCheckpoint)
+            {
+                this.isCheckpoint = true;
+                AudioSource.PlayClipAtPoint(onCheckpointSound, transform.position);
+                collision.GetComponent<PlayerRespawn>().ReachedCheckpoint(transform.position.x, transform.position.y);
+                GetComponent<Animator>().enabled = true;
+            }
+            
         }
    }
     

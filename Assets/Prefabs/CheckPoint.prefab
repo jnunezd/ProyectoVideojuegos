@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed193d59691be2f4db04b17c57c4d148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onCheckpointSound: {fileID: 8300000, guid: 81e5b09e3591532458208cbdc33eaaae, type: 3}
 --- !u!95 &4246444779420600418
 Animator:
   serializedVersion: 4

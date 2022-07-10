@@ -29,7 +29,7 @@ public class JohnMovement : MonoBehaviour
 
     public GameObject fallDetector;
 
-    public AudioClip JohnHit;
+    public AudioClip johnHit;
 
     // Start is called before the first frame update
     void Start()
@@ -106,7 +106,7 @@ public class JohnMovement : MonoBehaviour
 
     public void Hit()
     {
-        AudioSource.PlayClipAtPoint(JohnHit, transform.position);
+        AudioSource.PlayClipAtPoint(johnHit, transform.position);
         Health--;
         if (this.Health < 1)
         {
@@ -168,7 +168,7 @@ public class JohnMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("caida f");
+        
         if (collision.CompareTag("DetectorCaida"))
         {
             Debug.Log("caida");

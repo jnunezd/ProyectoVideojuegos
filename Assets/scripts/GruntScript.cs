@@ -11,7 +11,7 @@ public class GruntScript : MonoBehaviour
 
     private int Health = 2;
 
-public AudioClip GruntHit;
+    public AudioClip GruntHit;
 
     private float LastShoot;
  
