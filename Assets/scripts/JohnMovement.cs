@@ -15,7 +15,7 @@ public class JohnMovement : MonoBehaviour
     private bool Grounded;
     private float LastShoot;
     private int originalHealth = 3;
-    private int Health = 3;
+    public int Health = 3;
 
     private bool controlsEnabled = true;
     private bool isDead = false;
@@ -165,7 +165,6 @@ public class JohnMovement : MonoBehaviour
         GetComponent<PlayerRespawn>().respawn();
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -173,6 +172,11 @@ public class JohnMovement : MonoBehaviour
         {
             Debug.Log("caida");
             this.Die();
+        }
+
+        if (collision.CompareTag("NextLevel"))
+        {
+            manager.goNextLvl();
         }
     }
 

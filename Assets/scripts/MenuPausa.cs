@@ -29,7 +29,7 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1;
         PauseButtonUi.SetActive(true);
         MenuPausaUi.SetActive(false);
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene(0);
     }
 
     public void Reiniciar()
@@ -38,7 +38,7 @@ public class MenuPausa : MonoBehaviour
         Time.timeScale = 1;
         PauseButtonUi.SetActive(true);
         MenuPausaUi.SetActive(false);
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(1);
     }
 
     public void Salir()

@@ -18,13 +18,12 @@ public class GameManager : MonoBehaviour
         Debug.Log("Puntos totales: " + monedasTotales);
     }
 
-    private void goNextLvl(){
+    public void goNextLvl(){
+
+        PlayerPrefs.DeleteKey("checkPointPositionX");
+        PlayerPrefs.DeleteKey("checkPointPositionY");
         SceneManager.LoadScene(nextLvl);
     }
 
-    public void Reset()
-    {
-        
-    }
    
 }

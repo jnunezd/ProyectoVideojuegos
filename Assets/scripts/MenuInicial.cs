@@ -9,7 +9,7 @@ public class MenuInicial : MonoBehaviour
     public void Jugar()
     {
         PlayerPrefs.DeleteAll();
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene(1);
     }
 
     public void Salir()
@@ -17,4 +17,11 @@ public class MenuInicial : MonoBehaviour
         Debug.Log("Saliendo...");
         Application.Quit();
     }
+
+    public void VolverMenu()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene(0);
+    }
+
 }

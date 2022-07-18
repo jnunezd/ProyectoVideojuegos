@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DetectorCaida
   - Enemy
+  - NextLevel
   layers:
   - Default
   - TransparentFX
