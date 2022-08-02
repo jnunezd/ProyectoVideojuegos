@@ -15,5 +15,5 @@ Proyecto inicial para aprender a desarrollar Videojuegos con Unity
   
   
   
-  ![Video Demo](https://onedrive.live.com/?authkey=%21AC4EgJAZLSzVpDw&cid=418473EC698B4A30&id=418473EC698B4A30%21688976&parId=418473EC698B4A30%21465668&o=OneUp)
+  [Video Demo](https://onedrive.live.com/?authkey=%21AC4EgJAZLSzVpDw&cid=418473EC698B4A30&id=418473EC698B4A30%21688976&parId=418473EC698B4A30%21465668&o=OneUp)
   
